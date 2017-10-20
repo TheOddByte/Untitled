@@ -3,7 +3,7 @@
     @version 1.0, 2017-10-20
     @author Kevin Nilsson
 --]]
-local Object = require("classes.Object")
+local Object = require("lib.classic")
 local Entity = Object:extend()
 
 --[[
@@ -17,6 +17,15 @@ function Entity:new(world, x, y)
     self.world = world
     self.x = x
     self.y = y
+    world:addEntity(self)
+end
+
+-- override this
+function Entity:update(dt)
+end
+
+-- override this
+function Entity:draw()
 end
 
 return Entity

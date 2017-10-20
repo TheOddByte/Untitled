@@ -3,6 +3,9 @@
     @version 0.0, YYYY-MM-DD
     @author Kevin Nilsson
 --]]
+local gamestate = require("lib.gamestate")
+local gameplay = require("states.gameplay")
+
 local weapons = {}
 
 local function combine(a, b)
@@ -18,6 +21,9 @@ function love.load()
         local weapon = love.filesystem.load(path)()
         print(weapon.name)
     end
+
+    gamestate.registerEvents()
+    gamestate.switch(gameplay)
 end
 
 function love.update()
