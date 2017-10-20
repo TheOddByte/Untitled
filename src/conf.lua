@@ -1,4 +1,3 @@
--- luacheck: globals love
 function love.conf(t)
     t.identity = "rpg-game"
     t.version = "0.10.2"

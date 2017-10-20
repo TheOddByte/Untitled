@@ -1,4 +1,3 @@
--- luacheck: globals love
 local pathutils = require("lib.pathutils")
 
 local function loadWeapons()

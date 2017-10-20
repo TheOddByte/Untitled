@@ -1,4 +1,3 @@
--- luacheck: globals love
 --[[
     [Game] Untitled
     @version 0.0, YYYY-MM-DD

@@ -1,4 +1,3 @@
--- luacheck: globals love
 --[[
     [Class] Player
     @version 1.0, 2017-10-20
