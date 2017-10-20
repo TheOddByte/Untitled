@@ -5,19 +5,16 @@
 --]]
 local gamestate = require("lib.gamestate")
 local gameplay = require("states.gameplay")
+local pathutils = require("lib.pathutils")
 
 local weapons = {}
-
-local function combine(a, b)
-    return a .. "/" .. b
-end
 
 function love.load()
     --# Load weapons
     local files = love.filesystem.getDirectoryItems("weapons")
     print("Found " .. #files .. " weapons")
     for i, name in pairs(files) do
-        local path = combine("weapons", name)
+        local path = pathutils.combine("weapons", name)
         local weapon = love.filesystem.load(path)()
         print(weapon.name)
     end
