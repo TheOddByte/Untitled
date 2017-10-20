@@ -20,6 +20,11 @@ function Entity:new(world, x, y)
     world:addEntity(self)
 end
 
+function Entity:move(dx, dy)
+    self.x = self.x + dx
+    self.y = self.y + dy
+end
+
 -- override this
 function Entity:update(dt)
 end
