@@ -5,19 +5,12 @@
 --]]
 local gamestate = require("lib.gamestate")
 local gameplay = require("states.gameplay")
-local pathutils = require("lib.pathutils")
+local weapon_loader = require("weapon_loader")
 
 local weapons = {}
 
 function love.load()
-    --# Load weapons
-    local files = love.filesystem.getDirectoryItems("weapons")
-    print("Found " .. #files .. " weapons")
-    for i, name in pairs(files) do
-        local path = pathutils.combine("weapons", name)
-        local weapon = love.filesystem.load(path)()
-        print(weapon.name)
-    end
+    weapon_loader.loadWeapons()
 
     gamestate.registerEvents()
     gamestate.switch(gameplay)
