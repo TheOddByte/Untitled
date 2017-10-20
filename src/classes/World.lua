@@ -20,7 +20,21 @@ function World:draw()
 end
 
 function World:addEntity(ent)
+    for i, other in ipairs(self.entities) do
+        if other == ent then
+            return
+        end
+    end
     table.insert(self.entities, ent)
+end
+
+function World:removeEntity(ent)
+    for i, other in ipairs(self.entities) do
+        if other == ent then
+            table.remove(self.entities, i)
+            break
+        end
+    end
 end
 
 return World
