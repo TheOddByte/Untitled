@@ -1,3 +1,4 @@
+-- luacheck: globals love
 local World = require("classes.World")
 local Player = require("classes.Player")
 local baton = require("lib.baton")

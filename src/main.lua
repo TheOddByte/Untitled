@@ -1,3 +1,4 @@
+-- luacheck: globals love
 --[[
     [Game] Untitled
     @version 0.0, YYYY-MM-DD
@@ -6,8 +7,6 @@
 local gamestate = require("lib.gamestate")
 local gameplay = require("states.gameplay")
 local weapon_loader = require("weapon_loader")
-
-local weapons = {}
 
 function love.load()
     weapon_loader.loadWeapons()
@@ -28,5 +27,5 @@ function love.keypressed(key)
     end
 end
 
-function love.mousepressed(x, y, button)
-end
+-- function love.mousepressed(x, y, button)
+-- end

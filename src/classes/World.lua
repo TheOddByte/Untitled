@@ -20,7 +20,7 @@ function World:draw()
 end
 
 function World:addEntity(ent)
-    for i, other in ipairs(self.entities) do
+    for _, other in ipairs(self.entities) do
         if other == ent then
             return
         end
