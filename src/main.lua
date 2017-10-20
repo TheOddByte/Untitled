@@ -15,7 +15,7 @@ function love.load()
     print("Found " .. #files .. " weapons")
     for i, name in pairs(files) do
         local path = combine("weapons", name)
-        local weapon = dofile(path)
+        local weapon = love.filesystem.load(path)()
         print(weapon.name)
     end
 end
