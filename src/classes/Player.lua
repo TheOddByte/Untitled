@@ -13,7 +13,7 @@ local Player = Entity:extend()
     @param int y, "The y coordinate"
 --]]
 function Player:new(world, x, y)
-    Entity.new(self, world, x, y)
+    Entity.new(self, world, x, y, 64, 64)
 
     self.jumps = 0
 end
@@ -24,8 +24,8 @@ end
 function Player:update(dt)
     Entity.update(self, dt)
 
-    if self.y + 50 > love.graphics.getHeight() then
-        self.y = love.graphics.getHeight() - 50
+    if self.y + self.height > love.graphics.getHeight() then
+        self.y = love.graphics.getHeight() - self.height
         self.yvel = 0
         self.jumps = 2
     end
@@ -42,7 +42,7 @@ end
     Draws the player
 --]]
 function Player:draw()
-    love.graphics.rectangle("fill", self.x, self.y, 50, 50)
+    love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
 end
 
 return Player

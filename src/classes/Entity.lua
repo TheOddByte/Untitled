@@ -13,10 +13,12 @@ local Entity = Object:extend()
     @param int        x, "The x coordinate of the entity"
     @param int        y  "The y coordinate of the entity"
 --]]
-function Entity:new(world, x, y)
+function Entity:new(world, x, y, width, height)
     self.world = world
-    self.x = x
-    self.y = y
+    self.x = x or 0
+    self.y = y or 0
+    self.width = width or 64
+    self.height = height or 64
     self.xvel = 0
     self.yvel = 0
     self.gravity = 2500
