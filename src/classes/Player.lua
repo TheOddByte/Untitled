@@ -3,13 +3,8 @@
     @version 1.0, 2017-10-20
     @author Kevin Nilsson
 --]]
-
-
-
-local Entity = require( "src/classes/Entity" )
+local Entity = require("classes.Entity")
 local Player = Entity:extend()
-
-
 
 --[[
     Initiates a new player
@@ -18,23 +13,19 @@ local Player = Entity:extend()
     @param int y, "The y coordinate"
 --]]
 function Player:new(x, y)
-    Entity.super.new( self, x, y )
+    Entity.super.new(self, x, y)
 end
-
-
 
 --[[
     Draws the player
 --]]
-function Player:draw() end
-
-
+function Player:draw()
+end
 
 --[[
     Updates stuff for the player
 --]]
-function Player:update(dt) end
-
-
+function Player:update(dt)
+end
 
 return Player
