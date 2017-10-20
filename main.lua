@@ -5,7 +5,26 @@
 --]]
 
 
-function love.load() end
+local weapons = {}
+
+
+local function combine( a, b )
+    return a .. "/" .. b
+end
+
+
+function love.load()
+
+    --# Load weapons
+    local files = love.filesystem.getDirectoryItems("src/weapons")
+    print("Found " .. #files .. " weapons")
+    for i, name in pairs(files) do
+        local path = combine("src/weapons", name)
+        local weapon = dofile(path)
+        print(weapon.name)
+    end
+
+end
 function love.update() end
 function love.draw() end
 function love.keypressed( key ) end
