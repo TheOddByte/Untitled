@@ -17,6 +17,9 @@ function Entity:new(world, x, y)
     self.world = world
     self.x = x
     self.y = y
+    self.xvel = 0
+    self.yvel = 0
+    self.gravity = 2500
     world:addEntity(self)
 end
 
@@ -27,6 +30,10 @@ end
 
 -- override this
 function Entity:update(dt)
+    self.yvel = self.yvel + self.gravity * dt
+
+    self.x = self.x + self.xvel * dt
+    self.y = self.y + self.yvel * dt
 end
 
 -- override this

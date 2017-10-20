@@ -6,7 +6,8 @@ local gameplay = {}
 
 local controls = {
     left = {"key:left", "key:a", "axis:leftx-", "button:dpleft"},
-    right = {"key:right", "key:d", "axis:leftx+", "button:dpright"}
+    right = {"key:right", "key:d", "axis:leftx+", "button:dpright"},
+    jump = {"key:w", "key:up", "button:a"}
 }
 
 function gameplay:enter()
@@ -24,6 +25,10 @@ function gameplay:handleInput(dt)
     self.input:update()
     local xmovement = self.input:get("right") - self.input:get("left")
     self.player:move(xmovement * dt * 500, 0)
+
+    if self.input:pressed "jump" then
+        self.player:jump()
+    end
 end
 
 function gameplay:draw()

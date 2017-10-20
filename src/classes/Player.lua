@@ -14,12 +14,28 @@ local Player = Entity:extend()
 --]]
 function Player:new(world, x, y)
     Entity.new(self, world, x, y)
+
+    self.jumps = 0
 end
 
 --[[
     Updates stuff for the player
 --]]
 function Player:update(dt)
+    Entity.update(self, dt)
+
+    if self.y + 50 > love.graphics.getHeight() then
+        self.y = love.graphics.getHeight() - 50
+        self.yvel = 0
+        self.jumps = 2
+    end
+end
+
+function Player:jump()
+    if self.jumps > 0 then
+        self.yvel = -800
+        self.jumps = self.jumps - 1
+    end
 end
 
 --[[
