@@ -1,0 +1,4 @@
+{
+  "lua.format.indentCount": 4,
+  "lua.format.singleQuote": false
+}
